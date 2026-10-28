@@ -2,39 +2,76 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YahiMilega</title>
+<title>YahiMilega - Sab Kuch</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#FFF8F0]">
-<header class="bg-white p-4 shadow-sm"><h1 class="font-bold text-xl"><span class="text-orange-500">Yahi</span>Milega</h1></header>
-<div class="max-w-4xl mx-auto p-4">
-<div class="bg-orange-500 rounded-[30px] p-6 text-white mb-6"><h2 class="text-2xl font-bold">Yaha Sab Kuch Milega</h2></div>
+<body class="bg-[#FFF8F0] font-sans">
+<header class="bg-white p-4 flex justify-between items-center shadow-sm sticky top-0 z-50">
+<div class="flex items-center gap-2"><span class="font-extrabold text-xl text-orange-500">YahiMilega</span><span class="bg-black text-white text-[10px] px-2 py-1 rounded-full font-bold">SAB KUCH</span></div>
+<button class="bg-black text-white px-5 py-2 rounded-full text-sm">Search</button>
+</header>
 
-<!-- Ye sab clickable hai -->
-<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-<a href="#shayari" class="bg-white p-5 rounded-[20px] border text-center font-bold">❤️ Shayari</a>
-<a href="#jobs" class="bg-white p-5 rounded-[20px] border text-center font-bold">💼 Govt Jobs</a>
-<a href="#study" class="bg-white p-5 rounded-[20px] border text-center font-bold">🎓 Study Zone</a>
-<a href="#love" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">❤️ Love</a>
-<a href="#dard" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">💔 Dard</a>
-<a href="#railway" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">🚂 Railway</a>
-<a href="#police" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">👮 Police</a>
-<a href="#notes" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">📚 Notes</a>
-<a href="#result" class="bg-white p-4 rounded-[20px] border text-center text-sm font-bold">📢 Result</a>
+<div class="max-w-md mx-auto p-3">
+<div class="bg-gradient-to-br from-orange-500 to-red-500 rounded-[30px] p-6 text-white">
+<h1 class="text-[28px] font-extrabold leading-8">Yaha Sab Kuch Milega, Ek Hi Jagah!</h1>
+<p class="text-sm opacity-90 mt-2">Shayari, Sarkari Result, Govt Job, College Notes...</p>
+<div class="flex gap-2 mt-4"><span class="bg-white/20 px-3 py-1 rounded-full text-xs">Shayari</span><span class="bg-white/20 px-3 py-1 rounded-full text-xs">Result</span><span class="bg-white/20 px-3 py-1 rounded-full text-xs">Jobs</span></div>
 </div>
 
-<!-- Andar ka content - Click pe yahi khulega -->
-<div class="mt-10 space-y-10">
-<div id="shayari" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">❤️ Shayari Section LIVE</h3><p class="text-sm text-gray-600">Yaha saari shayari ayegi. Click karke yaha aa gaye na?</p></div>
-<div id="jobs" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">💼 Jobs Section LIVE</h3><p class="text-sm text-gray-600">Railway, Police, SSC sab yaha.</p></div>
-<div id="study" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">🎓 Study Section LIVE</h3><p class="text-sm text-gray-600">Notes, Result, Paper sab yaha.</p></div>
-<div id="love" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">❤️ Love Shayari</h3><p>Love wali shayari ka content</p></div>
-<div id="dard" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">💔 Dard Shayari</h3><p>Dard wali shayari ka content</p></div>
-<div id="railway" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">🚂 Railway Job Detail</h3><p>Railway ki detail yaha</p></div>
-<div id="police" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">👮 Police Job Detail</h3><p>Police ki detail yaha</p></div>
-<div id="notes" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">📚 Notes Detail</h3><p>Notes yaha</p></div>
-<div id="result" class="bg-white p-5 rounded-[20px]"><h3 class="font-bold">📢 Result Detail</h3><p>Result yaha</p></div>
+<div id="liveBox" class="hidden mt-4 bg-white border-2 border-orange-500 p-5 rounded-[20px]">
+<h2 id="liveTitle" class="font-bold text-lg"></h2>
+<p id="liveText" class="text-sm text-gray-600 mt-1"></p>
+<button onclick="document.getElementById('liveBox').classList.add('hidden')" class="mt-3 bg-black text-white text-xs px-4 py-2 rounded-full">Band Karo</button>
+</div>
+
+<div class="bg-white rounded-[20px] p-4 mt-4 shadow-sm">
+<h3 class="font-bold text-sm mb-3">📝 Shayari Adda</h3>
+<div class="grid grid-cols-2 gap-2">
+<button onclick="openLive('Love Shayari')" class="bg-pink-50 py-2.5 rounded-xl text-xs font-bold">❤️ Love Shayari</button>
+<button onclick="openLive('Dard Shayari')" class="bg-pink-50 py-2.5 rounded-xl text-xs font-bold">💖 Dard Shayari</button>
+<button onclick="openLive('Dosti Shayari')" class="bg-green-50 py-2.5 rounded-xl text-xs font-bold">🤝 Dosti Shayari</button>
+<button onclick="openLive('Attitude Shayari')" class="bg-yellow-50 py-2.5 rounded-xl text-xs font-bold">😎 Attitude</button>
 </div>
 </div>
+
+<div class="bg-white rounded-[20px] p-4 mt-3 shadow-sm">
+<h3 class="font-bold text-sm mb-3">💼 Govt Job & Yojana</h3>
+<div class="grid grid-cols-2 gap-2">
+<button onclick="openLive('Railway Job')" class="bg-orange-50 py-2.5 rounded-xl text-xs font-bold">🚂 Railway</button>
+<button onclick="openLive('Police / Army Job')" class="bg-blue-50 py-2.5 rounded-xl text-xs font-bold">👮 Police / Army</button>
+<button onclick="openLive('SSC / UPSC Job')" class="bg-pink-50 py-2.5 rounded-xl text-xs font-bold">📚 SSC / UPSC</button>
+<button onclick="openLive('Sarkari Yojana')" class="bg-yellow-50 py-2.5 rounded-xl text-xs font-bold">💰 Sarkari Yojana</button>
+</div>
+</div>
+
+<div class="bg-white rounded-[20px] p-4 mt-3 shadow-sm">
+<h3 class="font-bold text-sm mb-3">🎓 Result & Admit Card</h3>
+<div class="grid grid-cols-2 gap-2">
+<button onclick="openLive('10th Result')" class="bg-gray-50 py-2.5 rounded-xl text-xs font-bold">10th Result</button>
+<button onclick="openLive('12th Result')" class="bg-gray-50 py-2.5 rounded-xl text-xs font-bold">12th Result</button>
+<button onclick="openLive('University Result')" class="bg-gray-50 py-2.5 rounded-xl text-xs font-bold">University Result</button>
+<button onclick="openLive('Admit Card')" class="bg-gray-50 py-2.5 rounded-xl text-xs font-bold">Admit Card</button>
+</div>
+</div>
+
+<div class="bg-white rounded-[20px] p-4 mt-3 shadow-sm">
+<h3 class="font-bold text-sm mb-3">🏫 School / College Gyan</h3>
+<div class="grid grid-cols-2 gap-2">
+<button onclick="openLive('Class 9-12 Notes')" class="bg-blue-50 py-2.5 rounded-xl text-xs font-bold">Class 9-12 Notes</button>
+<button onclick="openLive('BA / BSc / MA Notes')" class="bg-blue-50 py-2.5 rounded-xl text-xs font-bold">BA / BSc / MA</button>
+<button onclick="openLive('Fashion / Mehndi')" class="bg-green-50 py-2.5 rounded-xl text-xs font-bold">Fashion / Mehndi</button>
+<button onclick="openLive('Meme / Jokes')" class="bg-yellow-50 py-2.5 rounded-xl text-xs font-bold">Meme / Jokes</button>
+</div>
+</div>
+</div>
+
+<script>
+function openLive(name){
+document.getElementById('liveBox').classList.remove('hidden');
+document.getElementById('liveTitle').innerText=name+' - LIVE Ho Gaya!';
+document.getElementById('liveText').innerText=name+' ka sara content yaha ayega. Ab ye button clickable hai!';
+window.scrollTo({top:200, behavior:'smooth'});
+}
+</script>
 </body>
-</html>
+  </html>
