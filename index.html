@@ -67,9 +67,16 @@
 
 <script>
 function openLive(name){
-document.getElementById('liveBox').classList.remove('hidden');
-document.getElementById('liveTitle').innerText=name+' - LIVE Ho Gaya!';
-document.getElementById('liveText').innerText=name+' ka sara content yaha ayega. Ab ye button clickable hai!';
+const box=document.getElementById('liveBox');
+const title=document.getElementById('liveTitle');
+const text=document.getElementById('liveText');
+box.classList.remove('hidden');
+title.innerText=name+' - LIVE Ho Gaya!';
+if(name === 'Love Shayari'){
+text.innerHTML = `बहुत कुछ जान के जाना है तुमको,<br>बड़ी मुश्किल से पहचाना है तुमको।<br>मुझे जो तुम समझते हो गलत है,<br>किसी दिन ये भी समझाना है तुमको।।`;
+}else{
+text.innerText=name+' ka sara content yaha ayega. Ab ye button clickable hai!';
+}
 window.scrollTo({top:200, behavior:'smooth'});
 }
 </script>
