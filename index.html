@@ -1,46 +1,43 @@
-export default function Home(){
- return(
- <div style={{minHeight:'100vh', background:'#fdf6ec', fontFamily:'system-ui'}}>
-   <header style={{background:'white', padding:'16px 24px', boxShadow:'0 1px 3px rgba(0,0,0,0.1)'}}>
-     <h1 style={{fontSize:'28px', fontWeight:900, color:'#7a1f2f', margin:0}}>YAHIMILEGA</h1>
-   </header>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YAHIMILEGA - Study, Job, Shayari, Wishes & Tools</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fdf6ec;font-family:system-ui,sans-serif;color:#222}
+header{background:white;border-bottom:1px solid #f0e6d8;position:sticky;top:0;z-index:10}
+.nav{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;color:#7a1f2f;font-size:22px;letter-spacing:1px}
+.nav a{font-size:13px;text-decoration:none;color:#666;margin-left:14px}
+.btn{background:#7a1f2f;color:white;padding:7px 16px;border-radius:20px;font-size:13px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+h2{font-size:34px;font-weight:900;color:#7a1f2f;text-align:center;font-family:serif;margin:0}
+.sub{text-align:center;font-size:13px;color:#888;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+@media(max-width:700px){.grid{grid-template-columns:1fr 1fr}.nav nav{display:none}}
+.card{background:white;border-radius:16px;padding:20px 10px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.06);border:1px solid #f0e6d8;text-decoration:none;color:#1a1a1a;display:block}
+.icon{width:36px;height:36px;background:#7a1f2f;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:white}
+.card b{font-size:13px;display:block}
+.card p{font-size:10px;color:#888;margin-top:4px;line-height:1.3}
+.sec{padding-top:36px}
+footer{background:#7a1f2f;color:white;margin-top:40px;padding:30px 20px}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">YAHIMILEGA</div><nav><a href="/" style="color:black;font-weight:600">Home</a><a href="#study">Study & Job</a><a href="#shayari">Shayari</a><a href="#wishes">Wishes & Quotes</a><a href="#tools">Tools</a><a href="#" class="btn">Get Started</a></nav></div></header>
 
-   <div style={{maxWidth:'1100px', margin:'0 auto', padding:'32px 16px'}}>
+<div class="wrap">
+<section class="sec" id="study"><h2>Study & Job</h2><p class="sub">Resources for learning, exams, and career opportunities – all in one place.</p><div class="grid"><a class="card" href="/competitive-exams"><div class="icon">📚</div><b>Competitive Exams</b><p>SSC, Banking, Railways, UPSC & more exam updates and notes</p></a><a class="card" href="/govt-jobs"><div class="icon">💼</div><b>Govt Jobs</b><p>Latest government job notifications, eligibility & deadlines</p></a><a class="card" href="/study-materials"><div class="icon">📝</div><b>Study Materials</b><p>Notes, PDFs, previous year papers for free download</p></a><a class="card" href="/career-guidance"><div class="icon">🎯</div><b>Career Guidance</b><p>Career tips, counseling, skills and job preparation guides</p></a></div></section>
 
-     <h2 style={{fontSize:'36px', fontWeight:900, color:'#7a1f2f', textAlign:'center', fontFamily:'serif'}}>Shayari Adda</h2>
-     <p style={{textAlign:'center', color:'#666', fontSize:'14px'}}>Explore beautiful shayari for every mood</p>
-     <div style={{background:'white', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.08)', marginTop:'16px', display:'grid', gridTemplateColumns:'1fr 1fr', border:'1px solid #eee'}}>
-       <a href="/shayari/love-shayari" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee', borderBottom:'1px solid #eee'}}><b>Love Shayari</b><br/><span style={{fontSize:'12px', color:'#888'}}>Romantic shayari</span></a>
-       <a href="/shayari/dard-shayari" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderBottom:'1px solid #eee'}}><b>Dard Shayari</b><br/><span style={{fontSize:'12px', color:'#888'}}>Sad shayari</span></a>
-       <a href="/shayari/dosti-shayari" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee'}}><b>Dosti Shayari</b><br/><span style={{fontSize:'12px', color:'#888'}}>Friendship lines</span></a>
-       <a href="/shayari/attitude" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black'}}><b>Attitude</b><br/><span style={{fontSize:'12px', color:'#888'}}>Bold shayari</span></a>
-     </div>
+<section class="sec" id="shayari"><h2>Shayari</h2><p class="sub">Explore beautiful shayari for every mood and emotion.</p><div class="grid"><a class="card" href="/shayari/love"><div class="icon">❤</div><b>Love Shayari</b><p>Romantic shayari for love & expressions</p></a><a class="card" href="/shayari/sad"><div class="icon">💔</div><b>Sad Shayari</b><p>Emotional & heartfelt sad shayari collection</p></a><a class="card" href="/shayari/attitude"><div class="icon">😎</div><b>Attitude Shayari</b><p>Bold & confident attitude shayari for bold souls</p></a><a class="card" href="/shayari/dosti"><div class="icon">🤝</div><b>Dosti Shayari</b><p>Fun & memorable friendship shayari lines</p></a></div></section>
 
-     <h2 style={{fontSize:'36px', fontWeight:900, color:'#7a1f2f', textAlign:'center', fontFamily:'serif', marginTop:'40px'}}>Govt Job & Yojana</h2>
-     <div style={{background:'white', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.08)', marginTop:'16px', display:'grid', gridTemplateColumns:'1fr 1fr', border:'1px solid #eee'}}>
-       <a href="/railway" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee', borderBottom:'1px solid #eee'}}><b>Railway</b></a>
-       <a href="/police-army" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderBottom:'1px solid #eee'}}><b>Police / Army</b></a>
-       <a href="/ssc-upsc" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee'}}><b>SSC / UPSC</b></a>
-       <a href="/sarkari-yojana" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black'}}><b>Sarkari Yojana</b></a>
-     </div>
+<section class="sec" id="wishes"><h2>Wishes & Quotes</h2><p class="sub">Best wishes, quotes and messages for every occasion.</p><div class="grid"><a class="card" href="/birthday"><div class="icon">🎂</div><b>Birthday Wishes</b><p>Heartfelt birthday wishes for friends & family</p></a><a class="card" href="/festival"><div class="icon">🎉</div><b>Festival Wishes</b><p>Festive wishes for Diwali, Holi, Eid & more</p></a><a class="card" href="/good-morning"><div class="icon">☀️</div><b>Good Morning</b><p>Beautiful good morning messages and quotes</p></a><a class="card" href="/motivational"><div class="icon">💡</div><b>Motivational Quotes</b><p>Daily motivation to inspire and uplift you</p></a></div></section>
 
-     <h2 style={{fontSize:'32px', fontWeight:900, color:'#7a1f2f', textAlign:'center', fontFamily:'serif', marginTop:'40px'}}>Result & Admit Card</h2>
-     <div style={{background:'white', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.08)', marginTop:'16px', display:'grid', gridTemplateColumns:'1fr 1fr', border:'1px solid #eee'}}>
-       <a href="/10th-result" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee', borderBottom:'1px solid #eee'}}><b>10th Result</b></a>
-       <a href="/12th-result" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderBottom:'1px solid #eee'}}><b>12th Result</b></a>
-       <a href="/university-result" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee'}}><b>University Result</b></a>
-       <a href="/admit-card" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black'}}><b>Admit Card</b></a>
-     </div>
+<section class="sec" id="tools" style="padding-bottom:40px"><h2>Tools</h2><div class="grid"><a class="card" href="/pdf-to-image"><b>PDF to Image</b><p>Convert PDF pages into high-quality images easily</p></a><a class="card" href="/text-to-pdf"><b>Text to PDF</b><p>Create PDF documents from your text instantly</p></a><a class="card" href="/age-calculator"><b>Age Calculator</b><p>Calculate age from date of birth in seconds</p></a><a class="card" href="/loan-emi"><b>Loan EMI Calculator</b><p>Estimate loan EMI with simple calculation</p></a></div></section>
+</div>
 
-     <h2 style={{fontSize:'32px', fontWeight:900, color:'#7a1f2f', textAlign:'center', fontFamily:'serif', marginTop:'40px'}}>School / College Gyan</h2>
-     <div style={{background:'white', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.08)', marginTop:'16px', display:'grid', gridTemplateColumns:'1fr 1fr', border:'1px solid #eee'}}>
-       <a href="/class-9-12-notes" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee', borderBottom:'1px solid #eee'}}><b>Class 9-12 Notes</b></a>
-       <a href="/ba-bsc-ma" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderBottom:'1px solid #eee'}}><b>BA / BSc / MA</b></a>
-       <a href="/fashion-mehndi" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black', borderRight:'1px solid #eee'}}><b>Fashion / Mehndi</b></a>
-       <a href="/meme-jokes" style={{padding:'20px', textAlign:'center', textDecoration:'none', color:'black'}}><b>Meme / Jokes</b></a>
-     </div>
-
-   </div>
- </div>
- )
-}
+<footer><div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px"><div><b>YAHIMILEGA</b><p style="font-size:11px;opacity:.8;margin-top:6px">Your one-stop destination for Study, Job, Shayari, Wishes & Tools.</p></div><div><b style="font-size:13px">Quick Links</b><p style="font-size:11px;opacity:.8;margin-top:6px">About Us - Privacy Policy - Terms - Contact</p><p style="font-size:10px;opacity:.6;margin-top:8px">© 2025 YAHIMILEGA. All rights reserved.</p></div><div style="text-align:right"><b style="font-size:13px">Follow Us</b><p style="font-size:11px;opacity:.8;margin-top:6px">Instagram | Facebook | YouTube</p></div></div></footer>
+</body>
+</html>
